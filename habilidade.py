@@ -1,11 +1,12 @@
 class Habilidade:
+    __habilidades = {}
+
+
     def __init__(self, nome, descricao, tipo, custo):
         self.__nome = nome
         self.__descricao = descricao
         self.__tipo = tipo
         self.__custo = custo
-        self.__habilidades = []
-
 
     @property
     def nome(self):
@@ -51,3 +52,7 @@ class Habilidade:
             self.__custo = custo
         else:
             raise TypeError('O custo deve ser um inteiro')
+
+    @staticmethod
+    def adicionar_habilidade(habilidade):
+        Habilidade.__habilidades[habilidade.nome] = habilidade

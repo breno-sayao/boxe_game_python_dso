@@ -5,7 +5,7 @@ class Defesa(Habilidade):
     def __init__(self, nome, descricao, tipo, custo, taxa_defesa:int):
         super().__init__(nome, descricao, tipo, custo)
         self.__taxa_defesa = taxa_defesa
-
+        Defesa.adicionar_habilidade(self)
 
     @property
     def taxa_defesa(self):
